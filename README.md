@@ -10,13 +10,13 @@ There's a total os 29 test cases, the test case files as well as a resource file
 **TIP:** You can click on the file names to see the latest versions.
 
 ### [valid_operations.robot](https://github.com/sklarow/calculator_tests/blob/main/calculator_tests/valid_operations.robot)
-Tests related to happy path scenarios of the 5 operations, this suite also demonstrates using test setup and teardown\
+Tests related to happy path scenarios of the 5 operations, this suite also demonstrates using test setup and teardown
 ### [invalid_operations.robot](https://github.com/sklarow/calculator_tests/blob/main/calculator_tests/bug_verification.robot)
-Tests related to invalid operations return messages\
+Tests related to invalid operations return messages
 ### [integers_only_flag.robot](https://github.com/sklarow/calculator_tests/blob/main/calculator_tests/integers_only_flag.robot)
-Tests related to the feature (checkbox) that only shows the answer as an integer value\
+Tests related to the feature (checkbox) that only shows the answer as an integer value
 ### [bug_verification.robot](https://github.com/sklarow/calculator_tests/blob/main/calculator_tests/bug_verification.robot)
-A test suite with a single Gherkin style test, simulating a bugfix verification\
+A test suite with a single Gherkin style test, simulating a bugfix verification
 ### [resource.robot](https://github.com/sklarow/calculator_tests/blob/main/calculator_tests/resource.robot)
 The resource file with the global variables and reusable keywords
 

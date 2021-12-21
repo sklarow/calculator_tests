@@ -45,9 +45,9 @@ You will need 4 thing to run the tests:
 [Click here for more detailed installation instructions](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installation-instructions)
 ### Running Tests
 To run all the tests you can simple run this command:\
-`robot --variable calculator_tests`\
+`robot calculator_tests`\
 You can also run a single test suite:\
-`robot --variable calculator_tests/bug_verification.robot`\
+`robot calculator_tests/bug_verification.robot`\
 You can check more detailed examples [here](https://dev.to/juperala/how-to-run-robot-framework-test-from-command-line-5aa)
 
 ### Using Other Build or Browser

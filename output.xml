@@ -1,0 +1,2569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.1 on darwin)" generated="20211221 00:39:24.632" rpa="false" schemaversion="2">
+<suite id="s1" name="Calculator Tests" source="/Users/sklarow/dev/CalculatorWebAppTests/calculator_tests">
+<suite id="s1-s1" name="Bug Verification" source="/Users/sklarow/dev/CalculatorWebAppTests/calculator_tests/bug_verification.robot">
+<test id="s1-s1-t1" name="Concatenate Without Integers Only Checkbox">
+<kw name="Given calculator is open">
+<kw name="Open Calculator" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${CALCULATOR URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211221 00:39:24.723" level="INFO">Opening browser 'Chrome' to base url 'https://testsheepnz.github.io/BasicCalculator.html'.</msg>
+<status status="PASS" starttime="20211221 00:39:24.723" endtime="20211221 00:39:27.988"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211221 00:39:27.989" endtime="20211221 00:39:28.125"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211221 00:39:28.126" endtime="20211221 00:39:28.126"/>
+</kw>
+<kw name="Calculator Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Basic Calculator</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211221 00:39:28.130" level="INFO">Page title is 'Basic Calculator'.</msg>
+<status status="PASS" starttime="20211221 00:39:28.126" endtime="20211221 00:39:28.130"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.126" endtime="20211221 00:39:28.130"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:24.723" endtime="20211221 00:39:28.130"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:24.723" endtime="20211221 00:39:28.130"/>
+</kw>
+<kw name="And build is selected">
+<kw name="Select Build" library="resource">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectBuild</arg>
+<arg>${BUILD}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:28.131" level="INFO">Selecting options from selection list 'selectBuild' by label 2.</msg>
+<status status="PASS" starttime="20211221 00:39:28.130" endtime="20211221 00:39:28.174"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.130" endtime="20211221 00:39:28.174"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.130" endtime="20211221 00:39:28.174"/>
+</kw>
+<kw name="When user select the concatenate operation">
+<kw name="Select Operation Type" library="resource">
+<arg>Concatenate</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:28.175" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Concatenate.</msg>
+<status status="PASS" starttime="20211221 00:39:28.174" endtime="20211221 00:39:28.208"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.174" endtime="20211221 00:39:28.209"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.174" endtime="20211221 00:39:28.209"/>
+</kw>
+<kw name="Then Integers only checkbox should not be visible">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20211221 00:39:28.209" endtime="20211221 00:39:28.223"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20211221 00:39:28.232" level="INFO">Element 'integerSelect' exists but is not displayed.</msg>
+<status status="PASS" starttime="20211221 00:39:28.223" endtime="20211221 00:39:28.232"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.209" endtime="20211221 00:39:28.232"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:24.723" endtime="20211221 00:39:28.232"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211221 00:39:28.233" endtime="20211221 00:39:28.293"/>
+</kw>
+<doc>Tests related to know fixed bugs.
+A sample of Gherkin syntax on Robot Framework
+
+For example, the test will fail in the Build 3:
+robot --variable BUILD:3 calculator_tests/bug_verification.robot</doc>
+<status status="PASS" starttime="20211221 00:39:24.641" endtime="20211221 00:39:28.293"/>
+</suite>
+<suite id="s1-s2" name="Integers Only Flag" source="/Users/sklarow/dev/CalculatorWebAppTests/calculator_tests/integers_only_flag.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Calculator</arg>
+<arg>AND</arg>
+<arg>Select Build</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Calculator" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${CALCULATOR URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211221 00:39:28.296" level="INFO">Opening browser 'Chrome' to base url 'https://testsheepnz.github.io/BasicCalculator.html'.</msg>
+<status status="PASS" starttime="20211221 00:39:28.296" endtime="20211221 00:39:30.274"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211221 00:39:30.274" endtime="20211221 00:39:30.394"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211221 00:39:30.394" endtime="20211221 00:39:30.394"/>
+</kw>
+<kw name="Calculator Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Basic Calculator</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211221 00:39:30.398" level="INFO">Page title is 'Basic Calculator'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.395" endtime="20211221 00:39:30.398"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.394" endtime="20211221 00:39:30.398"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.296" endtime="20211221 00:39:30.398"/>
+</kw>
+<kw name="Select Build" library="resource">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectBuild</arg>
+<arg>${BUILD}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:30.399" level="INFO">Selecting options from selection list 'selectBuild' by label 2.</msg>
+<status status="PASS" starttime="20211221 00:39:30.398" endtime="20211221 00:39:30.437"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.398" endtime="20211221 00:39:30.437"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:28.296" endtime="20211221 00:39:30.437"/>
+</kw>
+<test id="s1-s2-t1" name="Sum">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2</arg>
+<arg>1.5</arg>
+<arg>Add</arg>
+<arg>3</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.438" level="INFO">Typing text '2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.438" endtime="20211221 00:39:30.517"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.437" endtime="20211221 00:39:30.517"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.517" level="INFO">Typing text '1.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.517" endtime="20211221 00:39:30.554"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.517" endtime="20211221 00:39:30.554"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:30.554" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Add.</msg>
+<status status="PASS" starttime="20211221 00:39:30.554" endtime="20211221 00:39:30.572"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.554" endtime="20211221 00:39:30.572"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.572" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.572" endtime="20211221 00:39:30.595"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.572" endtime="20211221 00:39:30.595"/>
+</kw>
+<kw name="Select Integers Only" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:30.596" endtime="20211221 00:39:30.609"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.609" level="INFO">Selecting checkbox 'integerSelect'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.609" endtime="20211221 00:39:30.637"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.595" endtime="20211221 00:39:30.637"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:30.637" endtime="20211221 00:39:30.647"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:30.855" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:30.660" endtime="20211221 00:39:30.855"/>
+</kw>
+<msg timestamp="20211221 00:39:30.857" level="FAIL">Value of text field 'numberAnswerField' should have been '3' but was '21'.</msg>
+<status status="FAIL" starttime="20211221 00:39:30.647" endtime="20211221 00:39:30.857"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:30.637" endtime="20211221 00:39:30.857"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:30.437" endtime="20211221 00:39:30.857"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.858" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.858" endtime="20211221 00:39:30.880"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.857" endtime="20211221 00:39:30.880"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:30.437" endtime="20211221 00:39:30.880">Value of text field 'numberAnswerField' should have been '3' but was '21'.</status>
+</test>
+<test id="s1-s2-t2" name="Subtraction">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>3.5</arg>
+<arg>2.4</arg>
+<arg>Subtract</arg>
+<arg>1</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.881" level="INFO">Typing text '3.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.881" endtime="20211221 00:39:30.906"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.880" endtime="20211221 00:39:30.906"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.906" level="INFO">Typing text '2.4' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.906" endtime="20211221 00:39:30.931"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.906" endtime="20211221 00:39:30.931"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:30.932" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Subtract.</msg>
+<status status="PASS" starttime="20211221 00:39:30.931" endtime="20211221 00:39:30.958"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.931" endtime="20211221 00:39:30.958"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:30.959" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:30.959" endtime="20211221 00:39:30.974"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.958" endtime="20211221 00:39:30.974"/>
+</kw>
+<kw name="Select Integers Only" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:30.974" endtime="20211221 00:39:31.203"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.203" level="INFO">Selecting checkbox 'integerSelect'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.203" endtime="20211221 00:39:31.236"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.974" endtime="20211221 00:39:31.236"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:31.237" endtime="20211221 00:39:31.247"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:31.260" level="INFO">Content of text field 'numberAnswerField' is '1'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.247" endtime="20211221 00:39:31.260"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.236" endtime="20211221 00:39:31.260"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.880" endtime="20211221 00:39:31.260"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.261" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.260" endtime="20211221 00:39:31.279"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.260" endtime="20211221 00:39:31.279"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:30.880" endtime="20211221 00:39:31.279"/>
+</test>
+<test id="s1-s2-t3" name="Multiplication">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2.5</arg>
+<arg>1.5</arg>
+<arg>Multiply</arg>
+<arg>3</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.280" level="INFO">Typing text '2.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.280" endtime="20211221 00:39:31.305"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.279" endtime="20211221 00:39:31.305"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.306" level="INFO">Typing text '1.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.306" endtime="20211221 00:39:31.332"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.305" endtime="20211221 00:39:31.332"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:31.333" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Multiply.</msg>
+<status status="PASS" starttime="20211221 00:39:31.332" endtime="20211221 00:39:31.360"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.332" endtime="20211221 00:39:31.360"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.360" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.360" endtime="20211221 00:39:31.374"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.360" endtime="20211221 00:39:31.374"/>
+</kw>
+<kw name="Select Integers Only" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:31.374" endtime="20211221 00:39:31.594"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.594" level="INFO">Selecting checkbox 'integerSelect'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.594" endtime="20211221 00:39:31.615"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.374" endtime="20211221 00:39:31.615"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:31.615" endtime="20211221 00:39:31.623"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:31.632" level="INFO">Content of text field 'numberAnswerField' is '3'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.623" endtime="20211221 00:39:31.632"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.615" endtime="20211221 00:39:31.632"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.279" endtime="20211221 00:39:31.632"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.633" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.633" endtime="20211221 00:39:31.647"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.632" endtime="20211221 00:39:31.647"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.279" endtime="20211221 00:39:31.647"/>
+</test>
+<test id="s1-s2-t4" name="Division">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>1.5</arg>
+<arg>0.5</arg>
+<arg>Divide</arg>
+<arg>3</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.648" level="INFO">Typing text '1.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.648" endtime="20211221 00:39:31.673"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.647" endtime="20211221 00:39:31.673"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.673" level="INFO">Typing text '0.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.673" endtime="20211221 00:39:31.696"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.673" endtime="20211221 00:39:31.696"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:31.697" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Divide.</msg>
+<status status="PASS" starttime="20211221 00:39:31.697" endtime="20211221 00:39:31.724"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.696" endtime="20211221 00:39:31.724"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:31.724" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:31.724" endtime="20211221 00:39:31.739"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.724" endtime="20211221 00:39:31.739"/>
+</kw>
+<kw name="Select Integers Only" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:31.739" endtime="20211221 00:39:32.418"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>integerSelect</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:32.419" level="INFO">Selecting checkbox 'integerSelect'.</msg>
+<status status="PASS" starttime="20211221 00:39:32.418" endtime="20211221 00:39:32.451"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.739" endtime="20211221 00:39:32.451"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:32.452" endtime="20211221 00:39:32.463"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:32.474" level="INFO">Content of text field 'numberAnswerField' is '3'.</msg>
+<status status="PASS" starttime="20211221 00:39:32.463" endtime="20211221 00:39:32.474"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:32.451" endtime="20211221 00:39:32.474"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.647" endtime="20211221 00:39:32.474"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:32.475" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:32.475" endtime="20211221 00:39:32.490"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:32.475" endtime="20211221 00:39:32.490"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:31.647" endtime="20211221 00:39:32.490"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211221 00:39:32.490" endtime="20211221 00:39:32.551"/>
+</kw>
+<doc>Tests related to the feature that only shows the answer as an integer value.</doc>
+<status status="FAIL" starttime="20211221 00:39:28.294" endtime="20211221 00:39:32.551"/>
+</suite>
+<suite id="s1-s3" name="Invalid Operations" source="/Users/sklarow/dev/CalculatorWebAppTests/calculator_tests/invalid_operations.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Calculator</arg>
+<arg>AND</arg>
+<arg>Select Build</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Calculator" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${CALCULATOR URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211221 00:39:32.554" level="INFO">Opening browser 'Chrome' to base url 'https://testsheepnz.github.io/BasicCalculator.html'.</msg>
+<status status="PASS" starttime="20211221 00:39:32.554" endtime="20211221 00:39:35.915"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211221 00:39:35.915" endtime="20211221 00:39:36.052"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211221 00:39:36.052" endtime="20211221 00:39:36.052"/>
+</kw>
+<kw name="Calculator Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Basic Calculator</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211221 00:39:36.055" level="INFO">Page title is 'Basic Calculator'.</msg>
+<status status="PASS" starttime="20211221 00:39:36.053" endtime="20211221 00:39:36.056"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:36.053" endtime="20211221 00:39:36.056"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:32.554" endtime="20211221 00:39:36.056"/>
+</kw>
+<kw name="Select Build" library="resource">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectBuild</arg>
+<arg>${BUILD}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:36.056" level="INFO">Selecting options from selection list 'selectBuild' by label 2.</msg>
+<status status="PASS" starttime="20211221 00:39:36.056" endtime="20211221 00:39:36.091"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:36.056" endtime="20211221 00:39:36.091"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:32.554" endtime="20211221 00:39:36.091"/>
+</kw>
+<test id="s1-s3-t1" name="Invalid Number 1">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>text</arg>
+<arg>1</arg>
+<arg>Add</arg>
+<arg>Number 1 is not a number</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:36.092" level="INFO">Typing text 'text' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:36.092" endtime="20211221 00:39:36.170"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:36.092" endtime="20211221 00:39:36.170"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:36.171" level="INFO">Typing text '1' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:36.170" endtime="20211221 00:39:36.205"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:36.170" endtime="20211221 00:39:36.205"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:36.205" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Add.</msg>
+<status status="PASS" starttime="20211221 00:39:36.205" endtime="20211221 00:39:36.222"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:36.205" endtime="20211221 00:39:36.222"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:36.223" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:36.223" endtime="20211221 00:39:36.245"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:36.223" endtime="20211221 00:39:36.245"/>
+</kw>
+<kw name="Error Message Should Be" library="resource">
+<arg>${errorMessage}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:46.545" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:46.334" endtime="20211221 00:39:46.545"/>
+</kw>
+<msg timestamp="20211221 00:39:46.545" level="FAIL">Element 'errorMsgField' not visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20211221 00:39:36.245" endtime="20211221 00:39:46.546"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>${errorMessage}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211221 00:39:46.546" endtime="20211221 00:39:46.546"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:36.245" endtime="20211221 00:39:46.546"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:36.091" endtime="20211221 00:39:46.546"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.547" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.546" endtime="20211221 00:39:46.570"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.546" endtime="20211221 00:39:46.570"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:36.091" endtime="20211221 00:39:46.570">Element 'errorMsgField' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s3-t2" name="Invalid Number 2">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>23</arg>
+<arg>text</arg>
+<arg>Subtract</arg>
+<arg>Number 2 is not a number</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.571" level="INFO">Typing text '23' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.571" endtime="20211221 00:39:46.607"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.571" endtime="20211221 00:39:46.607"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.608" level="INFO">Typing text 'text' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.607" endtime="20211221 00:39:46.643"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.607" endtime="20211221 00:39:46.643"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:46.643" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Subtract.</msg>
+<status status="PASS" starttime="20211221 00:39:46.643" endtime="20211221 00:39:46.673"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.643" endtime="20211221 00:39:46.673"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.673" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.673" endtime="20211221 00:39:46.695"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.673" endtime="20211221 00:39:46.695"/>
+</kw>
+<kw name="Error Message Should Be" library="resource">
+<arg>${errorMessage}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:46.695" endtime="20211221 00:39:46.703"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>${errorMessage}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211221 00:39:46.703" level="INFO">Verifying element 'errorMsgField' contains exact text 'Number 2 is not a number'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.703" endtime="20211221 00:39:46.713"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.695" endtime="20211221 00:39:46.713"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.570" endtime="20211221 00:39:46.713"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.713" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.713" endtime="20211221 00:39:46.729"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.713" endtime="20211221 00:39:46.729"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.570" endtime="20211221 00:39:46.729"/>
+</test>
+<test id="s1-s3-t3" name="Both Numbers Invalid">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>text1</arg>
+<arg>text2</arg>
+<arg>Multiply</arg>
+<arg>Number 1 is not a number</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.730" level="INFO">Typing text 'text1' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.730" endtime="20211221 00:39:46.756"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.730" endtime="20211221 00:39:46.757"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.757" level="INFO">Typing text 'text2' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.757" endtime="20211221 00:39:46.780"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.757" endtime="20211221 00:39:46.781"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:46.781" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Multiply.</msg>
+<status status="PASS" starttime="20211221 00:39:46.781" endtime="20211221 00:39:46.807"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.781" endtime="20211221 00:39:46.807"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.808" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.807" endtime="20211221 00:39:46.821"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.807" endtime="20211221 00:39:46.821"/>
+</kw>
+<kw name="Error Message Should Be" library="resource">
+<arg>${errorMessage}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:46.821" endtime="20211221 00:39:46.828"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>${errorMessage}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211221 00:39:46.828" level="INFO">Verifying element 'errorMsgField' contains exact text 'Number 1 is not a number'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.828" endtime="20211221 00:39:46.834"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.821" endtime="20211221 00:39:46.834"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.729" endtime="20211221 00:39:46.834"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.835" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.834" endtime="20211221 00:39:46.848"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.834" endtime="20211221 00:39:46.848"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.729" endtime="20211221 00:39:46.848"/>
+</test>
+<test id="s1-s3-t4" name="Divide By Zero">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>10</arg>
+<arg>0</arg>
+<arg>Divide</arg>
+<arg>Divide by zero error!</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.849" level="INFO">Typing text '10' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.849" endtime="20211221 00:39:46.874"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.849" endtime="20211221 00:39:46.874"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.875" level="INFO">Typing text '0' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.875" endtime="20211221 00:39:46.897"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.874" endtime="20211221 00:39:46.897"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:46.897" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Divide.</msg>
+<status status="PASS" starttime="20211221 00:39:46.897" endtime="20211221 00:39:46.924"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.897" endtime="20211221 00:39:46.925"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.925" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.925" endtime="20211221 00:39:46.939"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.925" endtime="20211221 00:39:46.939"/>
+</kw>
+<kw name="Error Message Should Be" library="resource">
+<arg>${errorMessage}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:46.939" endtime="20211221 00:39:46.946"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>errorMsgField</arg>
+<arg>${errorMessage}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211221 00:39:46.947" level="INFO">Verifying element 'errorMsgField' contains exact text 'Divide by zero error!'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.946" endtime="20211221 00:39:46.953"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.939" endtime="20211221 00:39:46.953"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.849" endtime="20211221 00:39:46.953"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:46.954" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:46.954" endtime="20211221 00:39:46.966"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.953" endtime="20211221 00:39:46.966"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:46.848" endtime="20211221 00:39:46.966"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211221 00:39:46.966" endtime="20211221 00:39:47.028"/>
+</kw>
+<doc>Tests related to invalid operations return messages.</doc>
+<status status="FAIL" starttime="20211221 00:39:32.552" endtime="20211221 00:39:47.028"/>
+</suite>
+<suite id="s1-s4" name="Valid Operations" source="/Users/sklarow/dev/CalculatorWebAppTests/calculator_tests/valid_operations.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Calculator</arg>
+<arg>AND</arg>
+<arg>Select Build</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Calculator" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${CALCULATOR URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211221 00:39:47.031" level="INFO">Opening browser 'Chrome' to base url 'https://testsheepnz.github.io/BasicCalculator.html'.</msg>
+<status status="PASS" starttime="20211221 00:39:47.031" endtime="20211221 00:39:50.104"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211221 00:39:50.104" endtime="20211221 00:39:50.225"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211221 00:39:50.225" endtime="20211221 00:39:50.225"/>
+</kw>
+<kw name="Calculator Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Basic Calculator</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211221 00:39:50.229" level="INFO">Page title is 'Basic Calculator'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.225" endtime="20211221 00:39:50.229"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.225" endtime="20211221 00:39:50.229"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:47.031" endtime="20211221 00:39:50.229"/>
+</kw>
+<kw name="Select Build" library="resource">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectBuild</arg>
+<arg>${BUILD}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:50.230" level="INFO">Selecting options from selection list 'selectBuild' by label 2.</msg>
+<status status="PASS" starttime="20211221 00:39:50.229" endtime="20211221 00:39:50.269"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.229" endtime="20211221 00:39:50.270"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:47.031" endtime="20211221 00:39:50.270"/>
+</kw>
+<test id="s1-s4-t1" name="Positive Int Sum">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>1</arg>
+<arg>2</arg>
+<arg>Add</arg>
+<arg>3</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.271" level="INFO">Typing text '1' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.270" endtime="20211221 00:39:50.348"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.270" endtime="20211221 00:39:50.349"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.349" level="INFO">Typing text '2' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.349" endtime="20211221 00:39:50.385"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.349" endtime="20211221 00:39:50.385"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:50.385" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Add.</msg>
+<status status="PASS" starttime="20211221 00:39:50.385" endtime="20211221 00:39:50.403"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.385" endtime="20211221 00:39:50.403"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.403" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.403" endtime="20211221 00:39:50.425"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.403" endtime="20211221 00:39:50.426"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:50.426" endtime="20211221 00:39:50.655"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:50.859" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:50.670" endtime="20211221 00:39:50.859"/>
+</kw>
+<msg timestamp="20211221 00:39:50.859" level="FAIL">Value of text field 'numberAnswerField' should have been '3' but was '12'.</msg>
+<status status="FAIL" starttime="20211221 00:39:50.655" endtime="20211221 00:39:50.859"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:50.426" endtime="20211221 00:39:50.860"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:50.270" endtime="20211221 00:39:50.860"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.860" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.860" endtime="20211221 00:39:50.882"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.860" endtime="20211221 00:39:50.882"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:50.270" endtime="20211221 00:39:50.882">Value of text field 'numberAnswerField' should have been '3' but was '12'.</status>
+</test>
+<test id="s1-s4-t2" name="Positive Int Subtraction">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2</arg>
+<arg>1</arg>
+<arg>Subtract</arg>
+<arg>1</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.883" level="INFO">Typing text '2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.883" endtime="20211221 00:39:50.909"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.882" endtime="20211221 00:39:50.909"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.910" level="INFO">Typing text '1' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.909" endtime="20211221 00:39:50.933"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.909" endtime="20211221 00:39:50.933"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:50.933" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Subtract.</msg>
+<status status="PASS" starttime="20211221 00:39:50.933" endtime="20211221 00:39:50.960"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.933" endtime="20211221 00:39:50.960"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:50.960" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:50.960" endtime="20211221 00:39:50.975"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.960" endtime="20211221 00:39:50.975"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:50.975" endtime="20211221 00:39:51.645"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:51.664" level="INFO">Content of text field 'numberAnswerField' is '1'.</msg>
+<status status="PASS" starttime="20211221 00:39:51.646" endtime="20211221 00:39:51.664"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.975" endtime="20211221 00:39:51.664"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.882" endtime="20211221 00:39:51.664"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:51.665" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:51.665" endtime="20211221 00:39:51.689"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.665" endtime="20211221 00:39:51.689"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:50.882" endtime="20211221 00:39:51.689"/>
+</test>
+<test id="s1-s4-t3" name="Positive Int Multiplication">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2</arg>
+<arg>3</arg>
+<arg>Multiply</arg>
+<arg>6</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:51.690" level="INFO">Typing text '2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:51.690" endtime="20211221 00:39:51.719"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.690" endtime="20211221 00:39:51.719"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:51.719" level="INFO">Typing text '3' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:51.719" endtime="20211221 00:39:51.743"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.719" endtime="20211221 00:39:51.743"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:51.743" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Multiply.</msg>
+<status status="PASS" starttime="20211221 00:39:51.743" endtime="20211221 00:39:51.773"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.743" endtime="20211221 00:39:51.773"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:51.774" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:51.774" endtime="20211221 00:39:51.792"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.773" endtime="20211221 00:39:51.792"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:51.793" endtime="20211221 00:39:52.250"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:52.268" level="INFO">Content of text field 'numberAnswerField' is '6'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.250" endtime="20211221 00:39:52.268"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.792" endtime="20211221 00:39:52.268"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.690" endtime="20211221 00:39:52.268"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.269" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.269" endtime="20211221 00:39:52.293"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.268" endtime="20211221 00:39:52.293"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:51.689" endtime="20211221 00:39:52.293"/>
+</test>
+<test id="s1-s4-t4" name="Positive Int Division">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>8</arg>
+<arg>4</arg>
+<arg>Divide</arg>
+<arg>2</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.295" level="INFO">Typing text '8' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.295" endtime="20211221 00:39:52.328"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.294" endtime="20211221 00:39:52.328"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.329" level="INFO">Typing text '4' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.329" endtime="20211221 00:39:52.354"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.328" endtime="20211221 00:39:52.354"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:52.354" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Divide.</msg>
+<status status="PASS" starttime="20211221 00:39:52.354" endtime="20211221 00:39:52.382"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.354" endtime="20211221 00:39:52.382"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.382" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.382" endtime="20211221 00:39:52.396"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.382" endtime="20211221 00:39:52.396"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:52.396" endtime="20211221 00:39:52.619"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:52.630" level="INFO">Content of text field 'numberAnswerField' is '2'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.619" endtime="20211221 00:39:52.630"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.396" endtime="20211221 00:39:52.630"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.294" endtime="20211221 00:39:52.630"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.631" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.631" endtime="20211221 00:39:52.647"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.631" endtime="20211221 00:39:52.647"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.294" endtime="20211221 00:39:52.647"/>
+</test>
+<test id="s1-s4-t5" name="Positive Int Concatenation">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>5</arg>
+<arg>6</arg>
+<arg>Concatenate</arg>
+<arg>56</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.648" level="INFO">Typing text '5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.648" endtime="20211221 00:39:52.675"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.648" endtime="20211221 00:39:52.675"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.676" level="INFO">Typing text '6' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.675" endtime="20211221 00:39:52.698"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.675" endtime="20211221 00:39:52.698"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:52.699" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Concatenate.</msg>
+<status status="PASS" starttime="20211221 00:39:52.699" endtime="20211221 00:39:52.726"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.698" endtime="20211221 00:39:52.726"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:52.726" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:52.726" endtime="20211221 00:39:52.741"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:52.726" endtime="20211221 00:39:52.741"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:52.742" endtime="20211221 00:39:53.197"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:53.409" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:53.215" endtime="20211221 00:39:53.409"/>
+</kw>
+<msg timestamp="20211221 00:39:53.409" level="FAIL">Value of text field 'numberAnswerField' should have been '56' but was '11'.</msg>
+<status status="FAIL" starttime="20211221 00:39:53.197" endtime="20211221 00:39:53.409"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:52.741" endtime="20211221 00:39:53.410"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:52.647" endtime="20211221 00:39:53.410"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:53.410" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:53.410" endtime="20211221 00:39:53.426"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:53.410" endtime="20211221 00:39:53.426"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:52.647" endtime="20211221 00:39:53.426">Value of text field 'numberAnswerField' should have been '56' but was '11'.</status>
+</test>
+<test id="s1-s4-t6" name="Decimal Sum">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>1.5</arg>
+<arg>2.5</arg>
+<arg>Add</arg>
+<arg>4</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:53.427" level="INFO">Typing text '1.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:53.427" endtime="20211221 00:39:53.453"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:53.427" endtime="20211221 00:39:53.453"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:53.453" level="INFO">Typing text '2.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:53.453" endtime="20211221 00:39:53.477"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:53.453" endtime="20211221 00:39:53.477"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:53.477" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Add.</msg>
+<status status="PASS" starttime="20211221 00:39:53.477" endtime="20211221 00:39:53.503"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:53.477" endtime="20211221 00:39:53.503"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:53.503" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:53.503" endtime="20211221 00:39:53.517"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:53.503" endtime="20211221 00:39:53.517"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:53.518" endtime="20211221 00:39:54.196"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:54.421" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:54.213" endtime="20211221 00:39:54.421"/>
+</kw>
+<msg timestamp="20211221 00:39:54.421" level="FAIL">Value of text field 'numberAnswerField' should have been '4' but was '1.52.5'.</msg>
+<status status="FAIL" starttime="20211221 00:39:54.196" endtime="20211221 00:39:54.421"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:53.517" endtime="20211221 00:39:54.421"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:53.427" endtime="20211221 00:39:54.422"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:54.422" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:54.422" endtime="20211221 00:39:54.437"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.422" endtime="20211221 00:39:54.437"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:53.427" endtime="20211221 00:39:54.437">Value of text field 'numberAnswerField' should have been '4' but was '1.52.5'.</status>
+</test>
+<test id="s1-s4-t7" name="Decimal Subtraction">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>3.5</arg>
+<arg>2.4</arg>
+<arg>Subtract</arg>
+<arg>1.1</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:54.438" level="INFO">Typing text '3.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:54.438" endtime="20211221 00:39:54.463"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.438" endtime="20211221 00:39:54.463"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:54.463" level="INFO">Typing text '2.4' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:54.463" endtime="20211221 00:39:54.487"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.463" endtime="20211221 00:39:54.487"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:54.488" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Subtract.</msg>
+<status status="PASS" starttime="20211221 00:39:54.488" endtime="20211221 00:39:54.506"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.487" endtime="20211221 00:39:54.506"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:54.506" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:54.506" endtime="20211221 00:39:54.520"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.506" endtime="20211221 00:39:54.520"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:54.521" endtime="20211221 00:39:55.419"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:55.436" level="INFO">Content of text field 'numberAnswerField' is '1.1'.</msg>
+<status status="PASS" starttime="20211221 00:39:55.419" endtime="20211221 00:39:55.436"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.520" endtime="20211221 00:39:55.437"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.438" endtime="20211221 00:39:55.437"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:55.437" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:55.437" endtime="20211221 00:39:55.461"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.437" endtime="20211221 00:39:55.461"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:54.437" endtime="20211221 00:39:55.461"/>
+</test>
+<test id="s1-s4-t8" name="Decimal Multiplication">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2.5</arg>
+<arg>1.5</arg>
+<arg>Multiply</arg>
+<arg>3.75</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:55.463" level="INFO">Typing text '2.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:55.463" endtime="20211221 00:39:55.495"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.462" endtime="20211221 00:39:55.495"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:55.496" level="INFO">Typing text '1.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:55.496" endtime="20211221 00:39:55.522"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.495" endtime="20211221 00:39:55.523"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:55.523" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Multiply.</msg>
+<status status="PASS" starttime="20211221 00:39:55.523" endtime="20211221 00:39:55.540"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.523" endtime="20211221 00:39:55.540"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:55.541" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:55.540" endtime="20211221 00:39:55.555"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.540" endtime="20211221 00:39:55.555"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:55.555" endtime="20211221 00:39:56.236"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:56.254" level="INFO">Content of text field 'numberAnswerField' is '3.75'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.236" endtime="20211221 00:39:56.254"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.555" endtime="20211221 00:39:56.255"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.462" endtime="20211221 00:39:56.255"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.256" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.255" endtime="20211221 00:39:56.280"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.255" endtime="20211221 00:39:56.280"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:55.462" endtime="20211221 00:39:56.281"/>
+</test>
+<test id="s1-s4-t9" name="Decimal Division">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>1.5</arg>
+<arg>0.5</arg>
+<arg>Divide</arg>
+<arg>3</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.282" level="INFO">Typing text '1.5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.282" endtime="20211221 00:39:56.317"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.282" endtime="20211221 00:39:56.317"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.318" level="INFO">Typing text '0.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.318" endtime="20211221 00:39:56.344"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.317" endtime="20211221 00:39:56.345"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:56.345" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Divide.</msg>
+<status status="PASS" starttime="20211221 00:39:56.345" endtime="20211221 00:39:56.364"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.345" endtime="20211221 00:39:56.364"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.364" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.364" endtime="20211221 00:39:56.379"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.364" endtime="20211221 00:39:56.379"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:56.380" endtime="20211221 00:39:56.835"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:39:56.854" level="INFO">Content of text field 'numberAnswerField' is '3'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.836" endtime="20211221 00:39:56.854"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.379" endtime="20211221 00:39:56.854"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.281" endtime="20211221 00:39:56.854"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.855" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.855" endtime="20211221 00:39:56.878"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.854" endtime="20211221 00:39:56.879"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.281" endtime="20211221 00:39:56.879"/>
+</test>
+<test id="s1-s4-t10" name="Decimal Concatenation">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2.2</arg>
+<arg>2.5</arg>
+<arg>Concatenate</arg>
+<arg>2.22.5</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.880" level="INFO">Typing text '2.2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.880" endtime="20211221 00:39:56.911"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.880" endtime="20211221 00:39:56.912"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.912" level="INFO">Typing text '2.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.912" endtime="20211221 00:39:56.937"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.912" endtime="20211221 00:39:56.937"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:56.937" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Concatenate.</msg>
+<status status="PASS" starttime="20211221 00:39:56.937" endtime="20211221 00:39:56.954"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.937" endtime="20211221 00:39:56.954"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:56.955" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:56.954" endtime="20211221 00:39:56.969"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:56.954" endtime="20211221 00:39:56.969"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:56.969" endtime="20211221 00:39:58.085"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:58.289" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:58.103" endtime="20211221 00:39:58.289"/>
+</kw>
+<msg timestamp="20211221 00:39:58.289" level="FAIL">Value of text field 'numberAnswerField' should have been '2.22.5' but was '4.7'.</msg>
+<status status="FAIL" starttime="20211221 00:39:58.085" endtime="20211221 00:39:58.289"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:56.969" endtime="20211221 00:39:58.289"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:56.879" endtime="20211221 00:39:58.289"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:58.290" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:58.290" endtime="20211221 00:39:58.303"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:58.290" endtime="20211221 00:39:58.304"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:56.879" endtime="20211221 00:39:58.304">Value of text field 'numberAnswerField' should have been '2.22.5' but was '4.7'.</status>
+</test>
+<test id="s1-s4-t11" name="Decimal and Int Sum">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2</arg>
+<arg>1.5</arg>
+<arg>Add</arg>
+<arg>3.5</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:58.305" level="INFO">Typing text '2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:58.304" endtime="20211221 00:39:58.329"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:58.304" endtime="20211221 00:39:58.329"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:58.329" level="INFO">Typing text '1.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:58.329" endtime="20211221 00:39:58.353"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:58.329" endtime="20211221 00:39:58.353"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:58.353" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Add.</msg>
+<status status="PASS" starttime="20211221 00:39:58.353" endtime="20211221 00:39:58.371"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:58.353" endtime="20211221 00:39:58.371"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:58.371" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:58.371" endtime="20211221 00:39:58.385"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:58.371" endtime="20211221 00:39:58.385"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:58.385" endtime="20211221 00:39:59.286"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:39:59.487" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:39:59.305" endtime="20211221 00:39:59.487"/>
+</kw>
+<msg timestamp="20211221 00:39:59.487" level="FAIL">Value of text field 'numberAnswerField' should have been '3.5' but was '21.5'.</msg>
+<status status="FAIL" starttime="20211221 00:39:59.286" endtime="20211221 00:39:59.487"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:58.385" endtime="20211221 00:39:59.487"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:58.304" endtime="20211221 00:39:59.487"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:59.488" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:59.488" endtime="20211221 00:39:59.512"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.488" endtime="20211221 00:39:59.512"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:39:58.304" endtime="20211221 00:39:59.512">Value of text field 'numberAnswerField' should have been '3.5' but was '21.5'.</status>
+</test>
+<test id="s1-s4-t12" name="Decimal and Int Subtraction">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2</arg>
+<arg>0.5</arg>
+<arg>Subtract</arg>
+<arg>1.5</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:59.513" level="INFO">Typing text '2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:59.513" endtime="20211221 00:39:59.540"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.513" endtime="20211221 00:39:59.541"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:59.541" level="INFO">Typing text '0.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:39:59.541" endtime="20211221 00:39:59.564"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.541" endtime="20211221 00:39:59.565"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:39:59.565" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Subtract.</msg>
+<status status="PASS" starttime="20211221 00:39:59.565" endtime="20211221 00:39:59.588"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.565" endtime="20211221 00:39:59.588"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:39:59.588" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:39:59.588" endtime="20211221 00:39:59.602"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.588" endtime="20211221 00:39:59.602"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:39:59.602" endtime="20211221 00:40:00.052"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:40:00.066" level="INFO">Content of text field 'numberAnswerField' is '1.5'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.052" endtime="20211221 00:40:00.067"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.602" endtime="20211221 00:40:00.067"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.513" endtime="20211221 00:40:00.067"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.067" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.067" endtime="20211221 00:40:00.087"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.067" endtime="20211221 00:40:00.087"/>
+</kw>
+<status status="PASS" starttime="20211221 00:39:59.512" endtime="20211221 00:40:00.087"/>
+</test>
+<test id="s1-s4-t13" name="Decimal and Int Multiplication">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>2</arg>
+<arg>3.2</arg>
+<arg>Multiply</arg>
+<arg>6.4</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.089" level="INFO">Typing text '2' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.089" endtime="20211221 00:40:00.121"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.088" endtime="20211221 00:40:00.121"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.122" level="INFO">Typing text '3.2' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.121" endtime="20211221 00:40:00.146"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.121" endtime="20211221 00:40:00.146"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:00.146" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Multiply.</msg>
+<status status="PASS" starttime="20211221 00:40:00.146" endtime="20211221 00:40:00.164"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.146" endtime="20211221 00:40:00.164"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.165" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.165" endtime="20211221 00:40:00.179"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.164" endtime="20211221 00:40:00.179"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:00.179" endtime="20211221 00:40:00.631"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:40:00.647" level="INFO">Content of text field 'numberAnswerField' is '6.4'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.631" endtime="20211221 00:40:00.647"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.179" endtime="20211221 00:40:00.647"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.088" endtime="20211221 00:40:00.647"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.648" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.648" endtime="20211221 00:40:00.669"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.647" endtime="20211221 00:40:00.669"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.088" endtime="20211221 00:40:00.669"/>
+</test>
+<test id="s1-s4-t14" name="Decimal and Int Division">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>3</arg>
+<arg>1.5</arg>
+<arg>Divide</arg>
+<arg>2</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.671" level="INFO">Typing text '3' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.670" endtime="20211221 00:40:00.700"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.670" endtime="20211221 00:40:00.700"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.701" level="INFO">Typing text '1.5' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.701" endtime="20211221 00:40:00.726"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.701" endtime="20211221 00:40:00.726"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:00.726" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Divide.</msg>
+<status status="PASS" starttime="20211221 00:40:00.726" endtime="20211221 00:40:00.744"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.726" endtime="20211221 00:40:00.744"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:00.744" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:00.744" endtime="20211221 00:40:00.758"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.744" endtime="20211221 00:40:00.758"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:00.758" endtime="20211221 00:40:01.214"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:40:01.233" level="INFO">Content of text field 'numberAnswerField' is '2'.</msg>
+<status status="PASS" starttime="20211221 00:40:01.215" endtime="20211221 00:40:01.233"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.758" endtime="20211221 00:40:01.233"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.670" endtime="20211221 00:40:01.233"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:01.234" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:01.234" endtime="20211221 00:40:01.257"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:01.233" endtime="20211221 00:40:01.257"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:00.670" endtime="20211221 00:40:01.257"/>
+</test>
+<test id="s1-s4-t15" name="Decimal and Int Concatenation">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>5</arg>
+<arg>6.6</arg>
+<arg>Concatenate</arg>
+<arg>56.6</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:01.258" level="INFO">Typing text '5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:01.258" endtime="20211221 00:40:01.289"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:01.258" endtime="20211221 00:40:01.289"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:01.290" level="INFO">Typing text '6.6' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:01.290" endtime="20211221 00:40:01.314"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:01.289" endtime="20211221 00:40:01.314"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:01.315" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Concatenate.</msg>
+<status status="PASS" starttime="20211221 00:40:01.314" endtime="20211221 00:40:01.333"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:01.314" endtime="20211221 00:40:01.333"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:01.333" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:01.333" endtime="20211221 00:40:01.347"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:01.333" endtime="20211221 00:40:01.347"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:01.347" endtime="20211221 00:40:02.030"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:40:02.238" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:40:02.047" endtime="20211221 00:40:02.238"/>
+</kw>
+<msg timestamp="20211221 00:40:02.238" level="FAIL">Value of text field 'numberAnswerField' should have been '56.6' but was '11.6'.</msg>
+<status status="FAIL" starttime="20211221 00:40:02.030" endtime="20211221 00:40:02.238"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:01.347" endtime="20211221 00:40:02.239"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:01.258" endtime="20211221 00:40:02.239"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:02.239" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:02.239" endtime="20211221 00:40:02.253"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:02.239" endtime="20211221 00:40:02.253"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:01.257" endtime="20211221 00:40:02.253">Value of text field 'numberAnswerField' should have been '56.6' but was '11.6'.</status>
+</test>
+<test id="s1-s4-t16" name="Negative Answer Sum">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>-5</arg>
+<arg>4</arg>
+<arg>Add</arg>
+<arg>-1</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:02.254" level="INFO">Typing text '-5' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:02.254" endtime="20211221 00:40:02.279"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:02.254" endtime="20211221 00:40:02.279"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:02.279" level="INFO">Typing text '4' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:02.279" endtime="20211221 00:40:02.302"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:02.279" endtime="20211221 00:40:02.302"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:02.303" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Add.</msg>
+<status status="PASS" starttime="20211221 00:40:02.302" endtime="20211221 00:40:02.319"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:02.302" endtime="20211221 00:40:02.319"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:02.320" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:02.320" endtime="20211221 00:40:02.333"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:02.320" endtime="20211221 00:40:02.334"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:02.334" endtime="20211221 00:40:03.013"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:40:03.226" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:40:03.030" endtime="20211221 00:40:03.227"/>
+</kw>
+<msg timestamp="20211221 00:40:03.227" level="FAIL">Value of text field 'numberAnswerField' should have been '-1' but was '-54'.</msg>
+<status status="FAIL" starttime="20211221 00:40:03.013" endtime="20211221 00:40:03.227"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:02.334" endtime="20211221 00:40:03.227"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:02.254" endtime="20211221 00:40:03.227"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:03.228" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:03.228" endtime="20211221 00:40:03.242"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.228" endtime="20211221 00:40:03.242"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:02.254" endtime="20211221 00:40:03.242">Value of text field 'numberAnswerField' should have been '-1' but was '-54'.</status>
+</test>
+<test id="s1-s4-t17" name="Negative Answer Subtraction">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>-20</arg>
+<arg>10</arg>
+<arg>Subtract</arg>
+<arg>-30</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:03.243" level="INFO">Typing text '-20' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:03.243" endtime="20211221 00:40:03.271"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.242" endtime="20211221 00:40:03.271"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:03.271" level="INFO">Typing text '10' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:03.271" endtime="20211221 00:40:03.295"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.271" endtime="20211221 00:40:03.295"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:03.296" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Subtract.</msg>
+<status status="PASS" starttime="20211221 00:40:03.296" endtime="20211221 00:40:03.313"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.295" endtime="20211221 00:40:03.314"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:03.314" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:03.314" endtime="20211221 00:40:03.330"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.314" endtime="20211221 00:40:03.330"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:03.330" endtime="20211221 00:40:04.228"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:40:04.245" level="INFO">Content of text field 'numberAnswerField' is '-30'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.228" endtime="20211221 00:40:04.245"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.330" endtime="20211221 00:40:04.246"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.242" endtime="20211221 00:40:04.246"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.246" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.246" endtime="20211221 00:40:04.269"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.246" endtime="20211221 00:40:04.269"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:03.242" endtime="20211221 00:40:04.269"/>
+</test>
+<test id="s1-s4-t18" name="Negative Answer Multiplication">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>-10</arg>
+<arg>4</arg>
+<arg>Multiply</arg>
+<arg>-40</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.271" level="INFO">Typing text '-10' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.270" endtime="20211221 00:40:04.303"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.270" endtime="20211221 00:40:04.303"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.304" level="INFO">Typing text '4' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.303" endtime="20211221 00:40:04.329"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.303" endtime="20211221 00:40:04.329"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:04.329" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Multiply.</msg>
+<status status="PASS" starttime="20211221 00:40:04.329" endtime="20211221 00:40:04.346"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.329" endtime="20211221 00:40:04.346"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.347" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.347" endtime="20211221 00:40:04.361"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.346" endtime="20211221 00:40:04.361"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:04.361" endtime="20211221 00:40:04.812"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:40:04.830" level="INFO">Content of text field 'numberAnswerField' is '-40'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.813" endtime="20211221 00:40:04.830"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.361" endtime="20211221 00:40:04.830"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.270" endtime="20211221 00:40:04.830"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.831" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.830" endtime="20211221 00:40:04.854"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.830" endtime="20211221 00:40:04.854"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.269" endtime="20211221 00:40:04.854"/>
+</test>
+<test id="s1-s4-t19" name="Negative Answer Division">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>10</arg>
+<arg>-1</arg>
+<arg>Divide</arg>
+<arg>-10</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.856" level="INFO">Typing text '10' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.856" endtime="20211221 00:40:04.889"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.855" endtime="20211221 00:40:04.889"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.889" level="INFO">Typing text '-1' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.889" endtime="20211221 00:40:04.914"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.889" endtime="20211221 00:40:04.914"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:04.914" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Divide.</msg>
+<status status="PASS" starttime="20211221 00:40:04.914" endtime="20211221 00:40:04.932"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.914" endtime="20211221 00:40:04.932"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:04.932" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:04.932" endtime="20211221 00:40:04.946"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.932" endtime="20211221 00:40:04.946"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:04.947" endtime="20211221 00:40:05.402"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20211221 00:40:05.419" level="INFO">Content of text field 'numberAnswerField' is '-10'.</msg>
+<status status="PASS" starttime="20211221 00:40:05.402" endtime="20211221 00:40:05.419"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.946" endtime="20211221 00:40:05.420"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.855" endtime="20211221 00:40:05.420"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:05.420" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:05.420" endtime="20211221 00:40:05.444"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:05.420" endtime="20211221 00:40:05.445"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:04.854" endtime="20211221 00:40:05.445"/>
+</test>
+<test id="s1-s4-t20" name="Text Concatenation">
+<kw name="The Operation Should Return The Expected Answer">
+<arg>abc</arg>
+<arg>xyz</arg>
+<arg>Concatenate</arg>
+<arg>abcxyz</arg>
+<kw name="Input First Number" library="resource">
+<arg>${number1}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number1Field</arg>
+<arg>${number1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:05.446" level="INFO">Typing text 'abc' into text field 'number1Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:05.446" endtime="20211221 00:40:05.478"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:05.446" endtime="20211221 00:40:05.478"/>
+</kw>
+<kw name="Input Second Number" library="resource">
+<arg>${number2}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>number2Field</arg>
+<arg>${number2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:05.479" level="INFO">Typing text 'xyz' into text field 'number2Field'.</msg>
+<status status="PASS" starttime="20211221 00:40:05.479" endtime="20211221 00:40:05.505"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:05.478" endtime="20211221 00:40:05.505"/>
+</kw>
+<kw name="Select Operation Type" library="resource">
+<arg>${operationType}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selectOperationDropdown</arg>
+<arg>${operationType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211221 00:40:05.505" level="INFO">Selecting options from selection list 'selectOperationDropdown' by label Concatenate.</msg>
+<status status="PASS" starttime="20211221 00:40:05.505" endtime="20211221 00:40:05.523"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:05.505" endtime="20211221 00:40:05.523"/>
+</kw>
+<kw name="Click On Calculate Button" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>calculateButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:05.524" level="INFO">Clicking element 'calculateButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:05.523" endtime="20211221 00:40:05.538"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:05.523" endtime="20211221 00:40:05.538"/>
+</kw>
+<kw name="Answer Should Be" library="resource">
+<arg>${expectedAnswer}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211221 00:40:05.538" endtime="20211221 00:40:05.545"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>numberAnswerField</arg>
+<arg>${expectedAnswer}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211221 00:40:05.739" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211221 00:40:05.553" endtime="20211221 00:40:05.739"/>
+</kw>
+<msg timestamp="20211221 00:40:05.739" level="FAIL">Value of text field 'numberAnswerField' should have been 'abcxyz' but was ''.</msg>
+<status status="FAIL" starttime="20211221 00:40:05.545" endtime="20211221 00:40:05.739"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:05.538" endtime="20211221 00:40:05.739"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:05.445" endtime="20211221 00:40:05.739"/>
+</kw>
+<kw name="Clear Calculator" library="resource" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>clearButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211221 00:40:05.740" level="INFO">Clicking element 'clearButton'.</msg>
+<status status="PASS" starttime="20211221 00:40:05.740" endtime="20211221 00:40:05.755"/>
+</kw>
+<status status="PASS" starttime="20211221 00:40:05.740" endtime="20211221 00:40:05.755"/>
+</kw>
+<status status="FAIL" starttime="20211221 00:40:05.445" endtime="20211221 00:40:05.755">Value of text field 'numberAnswerField' should have been 'abcxyz' but was ''.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211221 00:40:05.756" endtime="20211221 00:40:05.834"/>
+</kw>
+<doc>Tests related to happy path scenarios.
+
+These tests are data-driven by their nature. They use a single
+keyword, specified with Test Template setting, that is called
+with different arguments to cover different scenarios.
+
+This suite also demonstrates using test setup and teardown.</doc>
+<status status="FAIL" starttime="20211221 00:39:47.029" endtime="20211221 00:40:05.834"/>
+</suite>
+<status status="FAIL" starttime="20211221 00:39:24.632" endtime="20211221 00:40:05.837"/>
+</suite>
+<statistics>
+<total>
+<stat pass="19" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="19" fail="10" skip="0" id="s1" name="Calculator Tests">Calculator Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Bug Verification">Calculator Tests.Bug Verification</stat>
+<stat pass="3" fail="1" skip="0" id="s1-s2" name="Integers Only Flag">Calculator Tests.Integers Only Flag</stat>
+<stat pass="3" fail="1" skip="0" id="s1-s3" name="Invalid Operations">Calculator Tests.Invalid Operations</stat>
+<stat pass="12" fail="8" skip="0" id="s1-s4" name="Valid Operations">Calculator Tests.Valid Operations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
